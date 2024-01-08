@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="./favicon.ico" />
+  <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="description" content="Rail Map Toolkit" />
   <base href="./" />
-  <link rel="apple-touch-icon" href="./logo192.png" />
+  <link rel="apple-touch-icon" href="/logo192.png" />
   <!--
 manifest.json provides metadata used when your web app is installed on a
 user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -33,9 +33,13 @@ user's mobile device or desktop. See https://developers.google.com/web/fundament
           align-self: center;
       }
 
+      ul {
+          margin: 0;
+      }
+
       .actions {
           display: flex;
-          margin-top: 10px;
+          margin-top: 15px;
       }
 
       .actions button {
@@ -68,6 +72,14 @@ user's mobile device or desktop. See https://developers.google.com/web/fundament
     予您，例如将您最喜爱的城市加入调色板、上传您的作品作为模板，以及设计您的交通线网图。在前往新版本之前，请不要忘记下载JSON格式的
     配置文件，以继续在其上创作。
   </p>
+
+  <p>Browser requirements/瀏覽器需求/浏览器需求</p>
+  <ul>
+    <li>Google Chrome (>= 103)</li>
+    <li>Microsoft Edge (>= 103)</li>
+    <li>Apple Safari (>= 15.6)</li>
+    <li>Mozilla Firefox (>= 115)</li>
+  </ul>
 
   <div class="actions">
     <button onclick="download();">Download 下載 下载</button>
