@@ -1,1 +1,101 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/RailMapGenerator/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><base href="./"><link rel="apple-touch-icon" href="/RailMapGenerator/logo192.png"/><link rel="manifest" href="/RailMapGenerator/manifest.json"/><title>Rail Map Generator</title><script type="text/javascript">!function(i){if(i.search){var a={};i.search.slice(1).split("&").forEach((function(i){var l=i.split("=");a[l[0]]=l.slice(1).join("=").replace(/~and~/g,"&")})),void 0!==a.p&&window.history.replaceState(null,null,i.pathname.slice(0,-1)+(a.p||"")+(a.q?"?"+a.q:"")+i.hash)}}(window.location)</script><script defer="defer" src="/RailMapGenerator/static/js/main.53940cd1.js"></script><link href="/RailMapGenerator/static/css/main.bc3a97de.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><link rel="stylesheet" href="cdn/icon.fonts.googleapis.com.css"/><script async src="https://www.googletagmanager.com/gtag/js?id=UA-152882192-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-152882192-1")</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="./favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="description" content="Rail Map Toolkit" />
+  <base href="./" />
+  <link rel="apple-touch-icon" href="./logo192.png" />
+  <!--
+manifest.json provides metadata used when your web app is installed on a
+user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+-->
+  <link rel="manifest" href="/manifest.json" />
+
+  <style>
+      #root {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          width: 75%;
+          max-width: 700px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-family: -apple-system, sans-serif;
+      }
+
+      img {
+          width: 100px;
+          align-self: center;
+      }
+
+      .actions {
+          display: flex;
+          margin-top: 10px;
+      }
+
+      .actions button {
+          flex: 1;
+          margin: 0 10px;
+          font-size: 1rem;
+          font-weight: bold;
+      }
+  </style>
+
+  <title>Rail Map Toolkit</title>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root">
+  <img alt="RMG Logo" src="./logo192.png" />
+  <p>
+    Thank you for using Rail Map Generator (RMG)! We are committed to enhancing your experience of creating railway
+    route maps, so we started RMG V5 in 2022 to provide more features and applications that will allow you to add your
+    favourite cities to the palette, upload your work as templates, and design your own transport maps. Before moving
+    to the new version, don't forget to download the JSON format configuration file and continue creating on it.
+  </p>
+  <p>
+    多謝閣下使用鐵路路綫圖產生器（RMG）！我們致力於提升閣下創作路綫圖的體驗，因此我們已於2022年開展第五代RMG的開發工作，以提供更多功能及應用
+    程式予閣下，例如將閣下最喜愛的城市加入調色盤、上載閣下的作品作為範本，以及設計閣下的交通網絡圖。在前往新版本之前，請不要忘記下載JSON格式的
+    設定檔，以繼續在其上創作。
+  </p>
+  <p>
+    感谢您使用铁路线路图生成器（RMG）！我们致力于提升您创作线路图的体验，因此我们已于2022年开展第五代RMG的开发工作，以提供更多功能及应用程序
+    予您，例如将您最喜爱的城市加入调色板、上传您的作品作为模板，以及设计您的交通线网图。在前往新版本之前，请不要忘记下载JSON格式的
+    配置文件，以继续在其上创作。
+  </p>
+
+  <div class="actions">
+    <button onclick="download();">Download 下載 下载</button>
+    <button onclick="goToV5();">Go to RMG V5 前往第五代RMG</button>
+  </div>
+
+  <script>
+    function download() {
+      const param = window.localStorage.getItem("rmgParam");
+      if (param === null) {
+        alert("Configuration file not found! 未找到設定檔！未找到配置档案！");
+        return;
+      }
+      const blob = new Blob([param], { type: "application/json" });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "RMG-V3-PARAM.json";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    }
+
+    function goToV5() {
+      window.open("https://railmapgen.github.io/?app=rmg", "_blank");
+    }
+  </script>
+</div>
+</body>
+</html>
